@@ -4,7 +4,7 @@ import SummaryItem from "./components/summary-item";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] justify-items-center min-h-screen font-[family-name:var(--font-hanken-grotesk)]">
+    <div className="flex flex-col items-center justify-items-center min-h-screen font-[family-name:var(--font-hanken-grotesk)]">
       <main className="flex flex-col max-w-[375px] w-full">
         <section className="gradient-background flex flex-col items-center rounded-b-[2rem] text-center">
           <Header level={2} className="text-lg text-fig-light-blue py-6">Your Result</Header>
@@ -24,15 +24,17 @@ export default function Home() {
 
         <section className="px-8 py-6">
           <Header level={2} className="text-lg">Summary</Header>
-          <SummaryItem label="Reaction" value={80} />
-          <SummaryItem label="Memory" value={92} />
-          <SummaryItem label="Verbal" value={61} />
-          <SummaryItem label="Visual" value={72} />
-          <button>Continue</button>
+          <div className="flex flex-col gap-4 py-6">
+            <SummaryItem label="Reaction" value={80} />
+            <SummaryItem label="Memory" value={92} />
+            <SummaryItem label="Verbal" value={61} />
+            <SummaryItem label="Visual" value={72} />
+          </div>
+          <button type="button" className="bg-fig-dark-navy text-white p-4 w-full rounded-full text-lg font-bold">Continue</button>
         </section>
       </main>
 
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
+      <footer className="flex gap-6 flex-wrap items-center justify-center">
         <div className="attribution">
           Challenge by
           <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">

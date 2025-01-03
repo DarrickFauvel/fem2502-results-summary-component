@@ -12,6 +12,7 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         "fig-light-blue": "var(--color-light-blue-fig)",
+        "fig-dark-navy": "#303B59",
       },
     },
   },
