@@ -1,4 +1,5 @@
 import Header from "../header";
+import NumberDisplay from "./number-display";
 
 type ResultProps = {
   value: number;
@@ -27,12 +28,7 @@ export default function Result({ value }: ResultProps) {
         Your Result
       </Header>
 
-      <article className="gradient-circle flex flex-col justify-center w-[140px] h-[140px] rounded-full">
-        <span className="font-extrabold text-white text-[3.5rem] leading-[4.5rem]">
-          {value}
-        </span>
-        <span className="text-fig-light-blue font-bold">of 100</span>
-      </article>
+      <NumberDisplay value={value} />
 
       <div className="flex flex-col gap-2 pt-6">
         <Header level={3} className="text-2xl text-white">
