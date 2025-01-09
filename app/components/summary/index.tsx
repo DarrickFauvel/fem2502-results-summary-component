@@ -27,10 +27,10 @@ export default function Summary() {
     ];
     
     const colors = {
-      red: 'bg-red-50',
-      orange: "bg-orange-50",
-      green: 'bg-green-50',
-      blue: 'bg-blue-50'
+      red: 'bg-red-100',
+      orange: "bg-orange-100",
+      green: 'bg-green-100',
+      blue: 'bg-blue-100'
     }
 
   return (
