@@ -1,5 +1,12 @@
 "use client";
-import { ChangeEvent, HTMLProps, useEffect, useRef, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+
 
 type NumberDisplayProps = {
   value: number;
@@ -35,12 +42,21 @@ export default function NumberDisplay({ value }: NumberDisplayProps) {
     <article className="gradient-circle flex flex-col justify-center w-[140px] h-[140px] rounded-full">
       <span className="font-extrabold text-white text-[3.5rem] leading-[4.5rem]">
         {!isEditing ? (
-          <span
-            className="cursor-pointer select-none"
-            onClick={handleNumberClick}
-          >
-            {number}
-          </span>
+          <TooltipProvider delayDuration={100}>
+            <Tooltip>
+              <TooltipTrigger>
+                <span
+                  className="cursor-pointer select-none"
+                  onClick={handleNumberClick}
+                >
+                  {number}
+                </span>
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Click to edit</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
         ) : (
           <input
             type="number"
